@@ -1,14 +1,19 @@
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // HTML Pages to route:
 
 module.exports = function (app) {
-  // Load index page
+
   app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+    res.render("index")
+  });
+
+  app.get("/patient", function (req, res) {
+    db.Patient.findAll({}).then(function (dbPatient) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: dbPatient
       });
     });
   });
@@ -29,29 +34,22 @@ module.exports = function (app) {
     res.render("signup");
   });
 
-  app.get("/members", isAuthenticated, function(req, res) {
-   res.render("/members");
-  });
-
-  // Staff Page (after log-in) which shows the db of patients
-  app.get("/staff", function (req, res) {
-
+  app.get("/staff", isAuthenticated, function(req, res) {
+    res.render("/staff");
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({
+  app.get("/patient/:id", function (req, res) {
+    db.Patient.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
+    }).then(function (dbPatient) {
+      res.render("patient", {
+        example: dbPatient
       });
     });
   });
-
-
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

@@ -1,9 +1,7 @@
-// this needs to reflect our database information
-
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
+  var Patient = sequelize.define("Patient", {
     text: DataTypes.STRING,
     description: DataTypes.TEXT
   });
-  return Example;
+  return Patient;
 };
