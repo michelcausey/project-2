@@ -9,6 +9,10 @@ module.exports = function (app) {
     res.render("index")
   });
 
+  app.get("/service", function (req, res) {
+    res.render("service");
+  });
+
   app.get("/patient", function (req, res) {
     db.Patient.findAll({}).then(function (dbPatient) {
       res.render("index", {
