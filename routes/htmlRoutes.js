@@ -3,18 +3,17 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // HTML Pages to route:
 
-module.exports = function (app) {
-
-  app.get("/", function (req, res) {
-    res.render("index")
+module.exports = function(app) {
+  app.get("/", function(req, res) {
+    res.render("index");
   });
 
-  app.get("/service", function (req, res) {
+  app.get("/service", function(req, res) {
     res.render("service");
   });
 
-  app.get("/patient", function (req, res) {
-    db.Patient.findAll({}).then(function (dbPatient) {
+  app.get("/patient", function(req, res) {
+    db.Patient.findAll({}).then(function(dbPatient) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbPatient
@@ -22,7 +21,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/login", function (req, res) {
+  app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
@@ -30,7 +29,7 @@ module.exports = function (app) {
     res.render("login");
   });
 
-  app.get("/signup", function (req, res) {
+  app.get("/signup", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
@@ -43,12 +42,12 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/patient/:id", function (req, res) {
+  app.get("/patient/:id", function(req, res) {
     db.Patient.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbPatient) {
+    }).then(function(dbPatient) {
       res.render("patient", {
         example: dbPatient
       });
@@ -56,7 +55,7 @@ module.exports = function (app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
