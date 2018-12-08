@@ -12,19 +12,14 @@ module.exports = function(app) {
     res.render("service");
   });
 
-  app.get("/patient", function(req, res) {
-    db.Patient.findAll({}).then(function(dbPatient) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbPatient
-      });
-    });
+  app.get("/staff", function(req, res) {
+    res.render("staff");
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/staff");
     }
     res.render("login");
   });
@@ -32,7 +27,7 @@ module.exports = function(app) {
   app.get("/signup", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/staff");
     }
     res.render("signup");
   });
