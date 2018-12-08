@@ -2,23 +2,26 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all patient info
-  app.get("/api/patient", function(req, res) {
-    db.Patient.findAll({}).then(function(dbPatient) {
-      res.json(dbPatient);
+  app.get("/api/all", function(req, res) {
+    db.Patient.findAll({}).then(function(results) {
+      console.log(results);
     });
   });
 
   // Create a new patient
   app.post("/api/patient", function(req, res) {
-    db.Patient.create(req.body).then(function(dbPatient) {
-      res.json(dbPatient);
-    });
-  });
-
-  // close patient case -- use "app.update"
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Patient.destroy({ where: { id: req.params.id } }).then(function(dbPatient) {
-      res.json(dbPatient);
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Patient.create({
+      name: req.body.name,
+      dob: req.body.dob,
+      weight: req.body.weight,
+      heightIN: req.body.heightIN,
+      description: req.body.description
+    }).then(function(results) {
+      res.json(results);
     });
   });
 };
