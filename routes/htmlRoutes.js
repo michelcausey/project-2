@@ -6,14 +6,17 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   app.get("/", function(req, res) {
     res.render("index");
+    console.log("index page loaded")
   });
 
   app.get("/service", function(req, res) {
     res.render("service");
+    console.log("service page loaded")
   });
 
   app.get("/staff", function(req, res) {
     res.render("staff");
+    console.log("staff page loaded");
   });
 
   app.get("/login", function(req, res) {
@@ -22,6 +25,7 @@ module.exports = function(app) {
       res.redirect("/staff");
     }
     res.render("login");
+    console.log("login page loaded");
   });
 
   app.get("/signup", function(req, res) {
@@ -30,6 +34,7 @@ module.exports = function(app) {
       res.redirect("/staff");
     }
     res.render("signup");
+    console.log("signup page loaded");
   });
 
   app.get("/staff", isAuthenticated, function(req, res) {

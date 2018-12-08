@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>United for Dignity Back-Office</h2>
+        <h2>Back-Office</h2>
       </div>
     </div>
   </div>
@@ -17,52 +17,63 @@
         <li>This is announcement 2</li>
         <li>This is announcement 3</li>
       </ol>
-    </p>
+    </li>
+  </div>
+</div>
+<hr>
+
+<div class="container">
+  <div class="patient-container">
+    <h3>Current Clients</h3>
+    <p><i>**This will be filled in from the existing database**</i></p>
+    <li id="name">Name: </li>
+    <li id="dob">Date of Birth: </li>
+    <li id="height">Height: </li>
+    <li id="weight">Weight: </li>
+    <li id="description">Description: </li>
   </div>
 </div>
 
+<hr>
 <div class="container">
-  <h3>Current Clients</h3>
-  <div id="patient-data"></div>
+  <h3>Add New Client</h3>
+  <form id="new-patient-form">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="small-12 medium-6 cell">
+          <label>Name
+            <input id="name-section" type="text" placeholder="First and Last Name">
+          </label>
+        </div>
+        <div class="small-12 medium-6 cell">
+          <label>Date of Birth
+            <input id="dob-section" type="date" placeholder="mm/dd/yyyy">
+          </label>
+        </div>
+        <div class="small-12 medium-6 cell">
+          <label>Height
+            <input id="height-section" type="number" placeholder="Height (inches)">
+          </label>
+        </div>
+        <div class="small-12 medium-6 cell">
+          <label>Weight
+            <input id="weight-section" type="number" placeholder="Weight (pounds)">
+          </label>
+        </div>
+
+        <div class="small-12 columns">
+          <label>Description
+            <textarea name="text" id="description" rows="5"></textarea>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+  <label for="formfield" class="button">Submit</label>
 </div>
 
-<form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="small-12 medium-6 cell">
-            <label>Name
-              <input type="text" placeholder="First and Last Name">
-            </label>
-          </div>
-          <div class="small-12 medium-6 cell">
-            <label>Date of Birth
-              <input type="date" placeholder="mm/dd/yyyy">
-            </label>
-          </div>
-          <div class="small-12 medium-6 cell">
-            <label>Height
-              <input type="number" placeholder="Height (inches)">
-            </label>
-          </div>
-          <div class="small-12 medium-6 cell">
-              <label>Weight
-                <input type="number" placeholder="Weight (pounds)">
-              </label>
-          </div>
-      
-          <div class="small-12 columns">
-              <label>Description    
-                <textarea name="text" id="description" rows="5"></textarea>
-              </label>
-          </div>
-          
-        </div>
-      </div>
-    </form>
+<button id="button">CLICK</button>
 
-              <label for="formfield" class="button">Submit</label>
-              <input type="file" id="formfield" class="show-for-sr">
-
-              
-
-  <script type="text/javascript" src="/public/js/staff.js"></script>
+<script type="text/javascript" src="/js/staff.js"></script>
