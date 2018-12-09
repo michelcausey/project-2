@@ -5,13 +5,14 @@ module.exports = function(app) {
   app.get("/api/all", function(req, res) {
     db.Patient.findAll({}).then(function(results) {
       res.json(results);
+      console.log("load all");
     });
   });
 
   // Create a new patient
   app.post("/api/newpatient", function(req, res) {
     console.log(req.body);
-    // create takes an argument of an object describing the item we want to
+    // create takes an argument of an obj)ect describing the item we want to
     // insert into our table. In this case we just we pass in an obFject with a text
     // and complete property (req.body)
     db.Patient.create({
