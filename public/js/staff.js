@@ -3,10 +3,13 @@
 $(document).ready(function() {
   var patientContainer = $(".patient-container");
 
-  $(".button").click(function() {
-    alert("button was clicked");
-  });
+  // function to add a new patient from the form, and add it to the database
 
-  
-
+  function addPatient() {
+    $(".button").click(function() {
+      // when clicking the button add "Patient" into the field
+      patientContainer.append("Enter Data Here");
+    });
+  }
+  addPatient();
 });
