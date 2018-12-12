@@ -1,23 +1,13 @@
-<div id="staff">
-  <div class="w3-container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Back-Office</h2>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="w3-container">
   <div id="announcements">
-    <h3>Important Updates:</h3>
+    <h3>Important Staff Updates:</h3>
     <p>
       <ol>
         <li>This is announcement 1</li>
         <li>This is announcement 2</li>
         <li>This is announcement 3</li>
       </ol>
-    </li>
+      </li>
   </div>
 </div>
 <hr>
@@ -25,14 +15,10 @@
 <div class="w3-container">
   <div class="patient-container">
     <h3>Current Clients</h3>
-    <p><i>**This will be filled in from the existing database**</i></p>
-    <li id="name">Name: </li>
-    <li id="dob">Date of Birth: </li>
-    <li id="height">Height: </li>
-    <li id="weight">Weight: </li>
-    <li id="description">Description: </li>
+    <div id="patient-list"></div>
   </div>
 </div>
+<hr>
 
 <div class="container">
   <h3>Add New Client</h3>
@@ -40,25 +26,26 @@
     <div class="w3-row-padding">
       <div class="w3-half">
         <label>Name</label>
-        <input class="w3-input w3-border" type="text" placeholder="First and Last Name">
+        <input id="name-input" class="w3-input w3-border" type="text" placeholder="First and Last Name">
       </div>
       <div class="w3-half">
         <label>Date of Birth</label>
-        <input class="w3-input w3-border" type="date" placeholder="mm/dd/yyyy">
+        <input id="dob-input" class="w3-input w3-border" type="date" placeholder="mm/dd/yyyy">
       </div>
       <div class="w3-half">
         <label>Height</label>
-        <input class="w3-input w3-border" type="number" placeholder="Height">
+        <input id="height-input" class="w3-input w3-border" type="number" placeholder="Height">
       </div>
       <div class="w3-half">
         <label>Weight</label>
-        <input class="w3-input w3-border" type="number" placeholder="Weight">
+        <input id="weight-input" class="w3-input w3-border" type="number" placeholder="Weight">
       </div>
     </div>            
       <p><label class="w3-text-grey">Description</label>
-          <textarea class="w3-input w3-border" style="resize: vertical; overflow: auto;"></textarea>
+          <textarea id="description-input" class="w3-input w3-border" style="resize: vertical; overflow: auto;"></textarea>
       </p>
+        <button id="button">Add New Client</button>
 
-  <button id="button">CLICK</button>
 
-<script type="text/javascript" src="/js/staff.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/staff.js"></script>

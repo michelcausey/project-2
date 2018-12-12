@@ -29,12 +29,15 @@ United for Dignity is a non-profit organization focusing on rapid re-housing of 
  * Node
  * Express
  * Heroku
- * Handlebars(?)
+ * {{Handlebars}}
  * User Authentication
 
-## API Used:
-
 ## Future Development:
+ * HIPAA Compliance
+ * Require a 4-digit pin to access client data
+ * Reference Jounal API for each practitioner
+ * Internal Messaging System for staff
+ * Shared calendar for practitioners to schedule clients
 
 ## Our Team:
     - Ashley Jervis
