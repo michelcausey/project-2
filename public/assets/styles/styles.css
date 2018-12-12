@@ -4,4 +4,15 @@ img {
   margin-right: 25px;
   width: 20%;
   height: 200px;
- }
+
+}
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  font-size: 75%;
+
+}

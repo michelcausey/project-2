@@ -1,16 +1,6 @@
-<div id="staff">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Back-Office</h2>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
+<div class="w3-container">
   <div id="announcements">
-    <h3>Important Updates:</h3>
+    <h3>Important Staff Updates:</h3>
     <p>
       <ol>
         <li>This is announcement 1</li>
@@ -22,51 +12,40 @@
 </div>
 <hr>
 
-<div class="container">
+<div class="w3-container">
   <div class="patient-container">
     <h3>Current Clients</h3>
+    <div id="patient-list"></div>
   </div>
 </div>
-
 <hr>
+
 <div class="container">
   <h3>Add New Client</h3>
   <form id="new-patient-form">
-    <div class="grid-container">
-      <div class="grid-x grid-padding-x">
-        <div class="small-12 medium-6 cell">
-          <label>Name
-            <input id="name-section" type="text" placeholder="First and Last Name">
-          </label>
-        </div>
-        <div class="small-12 medium-6 cell">
-          <label>Date of Birth
-            <input id="dob-section" type="date" placeholder="mm/dd/yyyy">
-          </label>
-        </div>
-        <div class="small-12 medium-6 cell">
-          <label>Height
-            <input id="height-section" type="number" placeholder="Height (inches)">
-          </label>
-        </div>
-        <div class="small-12 medium-6 cell">
-          <label>Weight
-            <input id="weight-section" type="number" placeholder="Weight (pounds)">
-          </label>
-        </div>
-
-        <div class="small-12 columns">
-          <label>Description
-            <textarea name="text" id="description" rows="5"></textarea>
-          </label>
-        </div>
-
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <label>Name</label>
+        <input id="name-input" class="w3-input w3-border" type="text" placeholder="First and Last Name">
       </div>
-    </div>
-  </form>
+      <div class="w3-half">
+        <label>Date of Birth</label>
+        <input id="dob-input" class="w3-input w3-border" type="date" placeholder="mm/dd/yyyy">
+      </div>
+      <div class="w3-half">
+        <label>Height</label>
+        <input id="height-input" class="w3-input w3-border" type="number" placeholder="Height">
+      </div>
+      <div class="w3-half">
+        <label>Weight</label>
+        <input id="weight-input" class="w3-input w3-border" type="number" placeholder="Weight">
+      </div>
+    </div>            
+      <p><label class="w3-text-grey">Description</label>
+          <textarea id="description-input" class="w3-input w3-border" style="resize: vertical; overflow: auto;"></textarea>
+      </p>
+        <button id="button">Add New Client</button>
 
-  <label for="formfield" class="button">Submit</label>
-</div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/staff.js"></script>
+<script type="text/javascript" src="js/staff.js"></script>

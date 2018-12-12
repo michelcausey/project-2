@@ -2,10 +2,20 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all patient info
-  app.get("/api/all", function(req, res) {
+  app.get("/api/patient", function(req, res) {
     db.Patient.findAll({}).then(function(results) {
       res.json(results);
-      console.log("load all");
+    });
+  });
+
+  app.get("/api/patient/:id", (req, res) => {
+    db.Patient.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(results) {
+      res.json(results);
+      console.log("load one");
     });
   });
 

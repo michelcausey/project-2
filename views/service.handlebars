@@ -1,22 +1,32 @@
-<div class="card" style="width: 75%;">
-  <div class="card-divider">
-    <h1>UNITED FOR DIGNITY</h1>
-  </div>
+<div class="container">
+    <h1>Your Services</h1>
 
-  <div class="card" style="width: 75%;">
-    <div class="card-divider">
-      <h4>Services</h4>
-    </div>
-  </div>
-
-  <div class="card" id="medical">
-    <img src="./assets/General-Physician-Doctors.jpg">
+  {{!-- <div class="card" id="medical">
+    
     <div class="card-section">
       <p>Medical</p>
       <p>Description of Medical Services</p>
     </div>
-  </div>
+  </div> --}}
 
+<div class="w3-container" style="margin: 10px;">
+  <h2>Medical</h2>
+  <img src="/assets/images/doc.jpg" style="width: 500px; height: 350px;">
+  <br><br>
+  <button onclick="document.getElementById('med').style.display='block'" class="w3-button w3-blue">see more</button>
+
+  <div id="med" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('med').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+            
+{{!-- 
   <div class="card" id="mental">
     <img src="assets/img/generic/rectangle-1.jpg">
     <div class="card-section">
@@ -24,20 +34,90 @@
       <p>Description of Mental Health Services</p>
 
     </div>
-  </div>
+  </div> --}}
 
-  <div class="card" id="legal">
+  <div class="w3-container" style="margin: 10px;">
+  <h2>Mental Health</h2>
+  <img src="/assets/images/mental-health.png" style="width: 500px; height: 350px;">
+  <br><br>
+  <button onclick="document.getElementById('mental').style.display='block'" class="w3-button w3-blue">see more</button>
+
+  <div id="mental" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('mental').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {{!-- <div class="card" id="legal">
     <img src="assets/img/generic/rectangle-1.jpg">
     <div class="card-section">
       <p>Legal</p>
       <p>Description of Legal Services</p>
     </div>
-  </div>
+  </div> --}}
 
-  <div class="card" id="financial">
+  <div class="w3-container" style="margin: 10px;">
+  <h2>Legal</h2>
+  <img src="/assets/images/lawyer.jpg" style="width: 500px; height: 350px;">
+  <br><br>
+  <button onclick="document.getElementById('legal').style.display='block'" class="w3-button w3-blue">see more</button>
+
+  <div id="legal" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('legal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="w3-container" style="margin: 10px;">
+  <h2>Financial</h2>
+  <img src="/assets/images/finance.jpg" style="width: 500px; height: 350px;">
+  <br><br>
+  <button onclick="document.getElementById('financial').style.display='block'" class="w3-button w3-blue">see more</button>
+
+  <div id="financial" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('financial').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {{!-- <div class="card" id="financial">
     <img src="assets/img/generic/rectangle-1.jpg">
     <div class="card-section">
       <p>Financial</p>
       <p>Description of Financial Services</p>
     </div>
+  </div> --}}
+
+    <div class="w3-container" style="margin: 10px;">
+  <h2>Re-Housing</h2>
+  <img src="/assets/images/realtor.jpg" style="width: 500px; height: 350px;">
+  <br><br>
+  <button onclick="document.getElementById('realtor').style.display='block'" class="w3-button w3-blue">see more</button>
+
+  <div id="realtor" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('realtor').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
   </div>
+</div>
+
+</div>
