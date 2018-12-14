@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Your Services</h2>
+    <h2>Our Services</h2>
 
   {{!-- <div class="card" id="medical">
     
@@ -123,12 +123,21 @@
       </div>
   </div>
 
-  <div class="w3-image">
-    <h3>Donate</h3>
-  <img src="/assets/images/together.jpg" class="w3-border w3-padding" alt="Together we can" class="w3-card-4"></div>
-   <br><br>
-          <button onclick="document.getElementById('" class="w3-button w3-blue">see more</button>
+  <div class="w3-third w3-container">
+      <h3>Want to Help?</h3>
+        <img src="/assets/images/donate.jpg" style="width: 250px; height: 175px;">
+        <br><br>
+          <button onclick="document.getElementById('realtor').style.display='block'" class="w3-button w3-blue">see more</button>
 
-
+      <div id="realtor" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('realtor').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <p>Some text. Some text. Some text.</p>
+            <p>Some text. Some text. Some text.</p>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
 
