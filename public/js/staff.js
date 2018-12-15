@@ -16,7 +16,7 @@ $(document).ready(function() {
       var newPatient = {
         name: name.val().trim(),
         dob: dob.val().trim(),
-        height: height.val().trim(),
+        height: heightIN.val().trim(),
         weight: weight.val().trim(),
         description: description.val().trim()
       };
@@ -51,3 +51,4 @@ function submitPatient(Patient) {
     window.location.href = "/staff";
   });
 }
+
