@@ -1,9 +1,8 @@
 $(document).ready(function() {
   var name = $("#name-input");
   var dob = $("#dob-input");
-  var height = $("#height-input");
+  var heightIN = $("#height-input");
   var weight = $("#weight-input");
-  var description = $("#description-input");
 
   // function to add a new patient from the form, and add it to the database
 
@@ -16,9 +15,8 @@ $(document).ready(function() {
       var newPatient = {
         name: name.val().trim(),
         dob: dob.val().trim(),
-        height: heightIN.val().trim(),
+        heightIN: heightIN.val().trim(),
         weight: weight.val().trim(),
-        description: description.val().trim()
       };
 
       console.log(newPatient);
@@ -33,14 +31,16 @@ $(document).ready(function() {
 
   function getPatients() {
     $.get("/api/patient", function(patients) {
-      patients.forEach(element => {
+      patients.forEach(function(element) {
         $("#patient-list").append("--------- Patient Info ----------<br>");
         $("#patient-list").append("Patient ID: " + element.id + "<br>");
         $("#patient-list").append("Name: " + element.name + "<br>");
         $("#patient-list").append("Date of Birth: " + element.dob + "<br>");
         $("#patient-list").append("Height (in): " + element.heightIN + "<br>");
         $("#patient-list").append("Weight: " + element.weight + "<br>");
-        $("patient-list").append("Description: " + element.description);
+        $("#patient-list").append(
+          "<button id='notes'>Add Client Notes</button><br>"
+        );
       });
     });
   }
@@ -52,3 +52,10 @@ function submitPatient(Patient) {
   });
 }
 
+// function addNotes() {
+//   $("#notes").on("click", function(click) {
+//     console.log("clicked");
+//   });
+// }
+
+// addNotes();
