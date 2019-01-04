@@ -5,6 +5,9 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var db = require("./models");
 
+// var mysql = require("mysql");
+// var connection;
+
 var app = express();
 var PORT = process.env.PORT || 3000;
 
@@ -12,7 +15,7 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
+// We need to use sessions to keep track of our user"s login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
 );
@@ -40,6 +43,18 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
+
+// deploy to heroku -- steps
+// if (process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_URL);
+// } else {
+//   connection = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "root",
+//     database: "project2_db"
+//   });
+// }
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {
